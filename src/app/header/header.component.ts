@@ -9,7 +9,7 @@ import { CsvDataService } from '../shared/services/csv-data.service';
 })
 export class HeaderComponent implements OnInit {
   siteDescription: string = 'Immersive Technologies';
-  logoTF = '../../assets/img/TFS-logo.png';
+  logoTF = '../../assets/img/logo.png';
   navOptions: Array<String> = []; 
   catalogOptions: Array<String> = []; 
   @Output() selectedPage = new EventEmitter<string>();
