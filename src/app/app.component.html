@@ -1,0 +1,16 @@
+<!-- Header Component -->
+<app-header (selectedPage)="onNavigate($event)"
+[style.position]="staticMenu ? 'fixed' : 'inherit'"
+[ngClass]="{'fixed': staticMenu}"></app-header> <!-- (navChangeEvent)="changeCsvData($event)" --> 
+
+<!-- Wrapper Component | Catalog Content-->
+<app-wrapper *ngIf="productDetail && loadedPage === 'catalog'" 
+[productSelected]="videoUrl" 
+[productContent]="productDetail"
+(fixedMenu)="fixedHeader($event)"></app-wrapper>  <!-- *ngIf="!loading" -->
+
+<!-- Decision Tree Component -->
+<app-decision-tree *ngIf="loadedPage === 'decision-tree'"></app-decision-tree>
+
+<!-- About Us Component 
+<app-about-us *ngIf="loadedPage === 'about-us'"></app-about-us>-->

@@ -1,0 +1,27 @@
+.guide-image {
+    background: url('../../assets/img/hero.jpg') center, no-repeat;
+    background-size: cover;
+    min-height: 26rem;
+    max-height: 26rem;
+    transition: 0.5s ease;
+    &.fades {
+        //visibility: hidden; // display: none - Did you know that...  Animating the display property is not possible? :0
+        //opacity: 0; // and with this stays actionable!
+        //transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+        // solution: visibility prop
+        max-height: 0 !important;
+        min-height: 0 !important;
+        overflow: hidden;
+        transition: 0.5s ease;
+      }
+    .guide-text {
+        color: rgb(255, 255, 255);
+        font-family: HelveticaNeue-Bold;
+        font-size: 25px;
+        text-decoration: none;
+    }
+    hr {
+        width: 50px; 
+        border: 1px solid rgb(231, 19, 22);
+    }
+}

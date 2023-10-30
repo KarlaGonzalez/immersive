@@ -1,0 +1,166 @@
+/* NAV MENU */
+nav {
+    background: rgb(255, 255, 255) !important;
+    height: 85px;
+    z-index: 2;
+    .navbar-brand {
+        .logo {
+            height: 75px;
+            width: 188px;
+        }
+    }
+    .copy-box {
+        .left-border {
+            margin-bottom: 0; // !!!
+            color: rgb(121, 122, 125);
+            font-family: "HelveticaNeue", sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 16px;
+            text-align: right;
+            span {
+                border: 1px solid gray;
+                margin-right: 1rem;
+            }
+        }
+
+    }
+    .navbar-collapse {
+        //height: 100%; //Desktop
+        background: rgb(255, 255, 255) !important;
+        z-index: 10;
+        justify-content: flex-end;  // floats items to right
+    }
+    .dropdown-menu {
+        background: #f7f7f7;
+        top: 99%; //?Desktop
+        margin: 0; //?Desktop
+        border-radius: 0; //?Desktop
+        border: none; //?Desktop
+        .dropdown-item {
+            color: rgb(84, 88, 90);
+            font-family: HelveticaNeue-Medium;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+            padding: .8rem 1.5rem;
+            border-left: 2px solid transparent;
+            &:hover {
+                border-left: 2px solid #e71316;
+                color: #317e8c;
+            }
+        }
+    }
+    .nav-item {
+        .nav-link {
+            color: rgb(34, 34, 34);
+            font-family: HelveticaNeue-Medium;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 48px;
+            border-top: 2px solid transparent;
+        }
+        .nav-link[aria-expanded="true"]{
+            background: #f7f7f7;
+        }
+    }
+    .dropdown-toggle::after {
+        //display: none !important;
+        border: none;
+        font-family: 'icomoon' !important;
+        vertical-align: middle;
+        content: "\e93b";
+        color: #797a7d;
+    }
+}
+
+// Desktop 
+@media only screen and (max-width: 3000px) and (min-width: 991px) {
+    nav {
+        &.navbar {
+            padding: 0; //UX
+        }
+        .navbar-brand {
+            height: 100%; //UX
+        }
+        .navbar-collapse {
+            height: 100%; //UX
+        }
+        .navbar-nav {
+            height: 100%; //UX
+            align-items: center; //UX
+        }
+        .navbar-toggler {
+            //margin-right: 1rem;
+        }
+        .nav-item {
+            height: 100%; //UX
+            .nav-link {
+                height: 100%; //UX
+                padding: 1rem; //UX
+            }
+            .nav-link[aria-expanded="true"] {
+                border-top: 2px solid #e71316;
+            }
+        }
+        .dropdown-menu {
+            left: -6.5rem !important;
+            //background: burlywood;
+            //display: none; --- Hides submenu dropdown bootstrap 
+        }
+    }
+}
+
+// Mobile
+@media only screen and (max-width: 991px) and (min-width: 30px) {
+    nav {
+        padding: 0;
+        .navbar-brand {
+            margin: 0;
+            .logo {
+                /* height: 4rem;
+                width: 10rem; */
+            }
+        }
+        .copy-box {
+            //visibility: hidden; NOPE
+            display: none;
+            opacity: 0;
+            //transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+        }
+        .navbar-toggler {
+            padding-left: 0;
+            border: none !important;
+        }
+        .navbar-toggler:focus {
+            outline: none !important;
+        }
+        .navbar-toggler[aria-expanded="true"] {
+            .navbar-toggler-icon {
+                background-image: none;
+            }
+            .navbar-toggler-icon::after {
+                font-family: 'icomoon' !important;
+                vertical-align: sub;
+                content: "\e947";
+                color: #555759;
+            }
+        }
+        .nav-item {
+            .nav-link {
+                padding-left: 1.5rem;
+            }
+        }
+        .dropdown-menu {
+            //position: relative; // Static don't allow to see
+            //float: none;
+            .dropdown-item {
+                padding-left: 3rem;
+            }
+        }
+    }
+}
+
+
+
+// >= 992px

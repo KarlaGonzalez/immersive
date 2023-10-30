@@ -1,0 +1,69 @@
+@import url("https://www.thermofisher.com/designsystem-cdn/css/fonts.css");
+@import url("https://thermoux.s3.amazonaws.com/komodo-icons.css");
+
+html,
+body {
+  margin: 0;
+  font-family: "HelveticaNeue", sans-serif;
+}
+
+.fixed {
+  z-index: 2;
+  width: 100%;
+  //box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 5000px;
+}
+
+/* NAV MENU */
+nav {
+  background: rgb(255, 255, 255);
+  height: 85px;
+}
+.small-list {
+  display: flex;
+  width: 26rem;
+  float: right;
+  list-style: none; 
+  justify-content: space-around;
+  margin: 1rem 12rem 1rem 0;
+}
+
+.divission-sm {
+  border-left: 1px solid rgb(191, 191, 191);
+  //height: 37px;
+  //width: 1px;
+}
+
+.left-border {
+  margin-bottom: 0; // !!!
+  border-left: 1px solid rgb(191, 191, 191);
+  color: rgb(121, 122, 125);
+  font-family: "HelveticaNeue", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 16px;
+  letter-spacing: 0px;
+  line-height: 16px;
+  text-align: right;
+  width: 167px;
+}
+
+.normal-list {
+  display: flex;
+  list-style: none;
+  //margin: 1rem auto 1rem;
+  justify-content: space-around;
+}
+
+/* #treeFrame {
+  height: 900px !important; 
+  width: auto; 
+  //width: 1750px; 
+}
+ */

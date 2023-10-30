@@ -1,0 +1,17 @@
+#treeFrame {
+  /* Ok for desktop only */
+  /* height: 900px !important; 
+  width: 1750px;  */
+  height: 100% !important; 
+  width: 100%;
+  //border: 2px solid cyan;
+}
+
+// Decision tree scroll on desktop shrink
+@media only screen and (max-width: 1240px) and (min-width: 500px) {
+  #treeFrame {
+    /* height: 900px !important; 
+    width: 1240px;  */
+    //border: 2px solid purple;
+  }
+}

@@ -1,0 +1,304 @@
+.sticky {
+    position: fixed;
+    top: 5.3rem; // Important to keep both menu & tab nav -- 0;
+    width: 100%;
+    background: white;
+    z-index: 1;
+    /* position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+    //padding: 50px;
+    //font-size: 20px; */
+}
+
+#tabs-container {
+  //background: cyan;
+  background: rgb(255, 255, 255) !important;
+}
+
+// Tabs Komodo component
+.c-nav {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  width: 100%; // !!!
+  overflow: visible;
+  &.sticky { // !!!
+    width: 100% !important
+  }
+}
+
+.c-nav * {
+  line-height: 14px;
+}
+
+.c-nav::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.c-nav::-webkit-scrollbar:horizontal {
+  height: 4px;
+}
+
+.c-nav::-webkit-scrollbar-thumb {
+  background-color: #e71316;
+}
+
+.c-nav::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+.c-nav__container div {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+
+.c-nav__container div .c-nav__item a {
+  text-decoration: none;
+  color: #54545c;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.c-nav__container .c-nav__links {
+  //position: absolute;
+  left: 0;
+}
+
+.c-nav__container .c-nav__actions {
+  position: absolute;
+  padding-right: 24px;
+  right: 0;
+}
+
+.c-nav__container div .c-nav__item {
+  float: left;
+  height: 100%;
+}
+
+.c-nav__container .c-nav__links .c-nav__item {
+  color: #54545c;
+}
+
+.c-nav__container .c-nav__links .c-nav__item:hover {
+  color: #222222;
+}
+
+.c-nav__container .c-nav__links .c-nav__item {
+  //border-bottom: 2px solid transparent;
+}
+
+.c-nav__container .c-nav__links .c-nav__item.c-nav--active {
+  //border: none;
+}
+
+.c-nav__container .c-nav__links .c-nav__item.c-nav--active {
+  border-bottom: 2px solid #e71316;
+}
+
+.c-nav__container .c-nav__links .c-nav__citem.c-nav--active a {
+  font-weight: bold;
+  color: #222222;
+}
+
+.c-nav__container .c-nav__actions .c-nav__item a {
+  font-weight: bold;
+  color: #1e8ae7;
+  font-size: 0;
+  padding: 16px 0 16px 0;
+}
+
+.c-nav__container div .c-nav__item a {
+  text-decoration: none;
+  position: relative;
+  padding: 16px;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Icons  */
+.c-nav--icon-data::before {
+  font-family: "icomoon";
+  font-size: 16px;
+  content: "\edf0";
+  margin-right: 8px;
+}
+
+.c-nav--icon-mail::before {
+  font-family: "icomoon";
+  font-size: 16px;
+  content: "\ed56";
+  position: relative;
+  top: 2px;
+  margin-right: 8px;
+}
+
+.c-nav--dropdown {
+  position: relative;
+}
+
+.c-nav--dropdown:hover .c-nav__dropdown-container {
+  display: block;
+  position: absolute;
+  box-shadow: 0px 6px 8px 0px rgba(34, 34, 34, 0.1);
+}
+
+.c-nav--dropdown .c-nav__dropdown-container {
+  display: none;
+}
+
+.c-nav--dropdown .c-nav__dropdown-container .c-nav__dropdown-item {
+  display: block;
+  margin-top: -1px;
+}
+
+@media (min-width: 576px) {
+  //test
+  .c-nav {
+    //background: blue;
+  }
+  .c-nav__container .c-nav__links {
+    position: absolute;
+    left: 0;
+  }
+
+  .c-nav__container .c-nav__actions {
+    position: absolute;
+    right: 0;
+    padding-right: 8px;
+  }
+}
+
+/* Desktop  */
+/* @media only screen and (max-width: 700px) and (min-width: 300px) {
+  //test
+  .c-nav {
+    background: fuchsia;
+  }
+} */
+
+@media (min-width: 768px) {
+  //test
+  .c-nav {
+    //background: yellow;
+  }
+  .c-nav__container .c-nav__links .c-nav__item.c-nav--active {
+    border-bottom: 2px solid #e71316;
+  }
+
+  .c-nav {
+    overflow: visible;
+  }
+
+  .c-nav__container .c-nav__actions {
+    position: absolute;
+    right: 16px;
+  }
+
+  .c-nav::-webkit-scrollbar:horizontal {
+    height: 0;
+  }
+
+  .c-nav--dropdown {
+    position: relative;
+  }
+
+  .c-nav--dropdown:hover .c-nav__dropdown-container {
+    display: block;
+    position: absolute;
+    box-shadow: 0px 6px 8px 0px rgba(34, 34, 34, 0.1);
+  }
+
+  .c-nav--dropdown .c-nav__dropdown-container {
+    display: none;
+  }
+
+  .c-nav--dropdown .c-nav__dropdown-container .c-nav__dropdown-item {
+    display: block;
+    margin-top: -1px;
+  }
+}
+
+@media (min-width: 576px) {
+  //test
+  .c-nav {
+    //background: pink;
+  }
+  .c-nav__container .c-nav__links {
+    position: absolute;
+    left: 0;
+  }
+
+  .c-nav__container .c-nav__actions {
+    position: absolute;
+    right: 0;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  //test
+  .c-nav {
+    //background: cyan;
+  }
+  .c-nav__container .c-nav__links .c-nav__item.c-nav--active {
+    border-bottom: 2px solid #e71316;
+  }
+
+  .c-nav__container .c-nav__actions {
+    position: absolute;
+    right: 16px;
+  }
+}
+
+/* Desktop  */
+@media (min-width: 992px) {
+  //test
+  .c-nav {
+    //background: yellowgreen;
+  }
+  .c-nav__container {
+    height: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  //test
+  .c-nav {
+    //background: orange;
+  }
+  .c-nav__container .c-nav__links {
+    position: absolute;
+    left: 0;
+  }
+
+  .c-nav__container .c-nav__actions {
+    position: absolute;
+    right: 0;
+  }
+
+  .c-nav__container .c-nav__actions .c-nav__item a {
+    font-size: 12px;
+    padding: 16px 0 16px 16px;
+  }
+}
+
+@media (min-width: 1440px) {
+  //test
+  .c-nav {
+    //background: gray;
+  }
+  .c-nav__container .c-nav__links {
+    position: absolute;
+    left: 0%;
+  }
+
+  .c-nav__container .c-nav__actions {
+    position: absolute;
+    right: 0%;
+  }
+}

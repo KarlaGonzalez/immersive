@@ -1,0 +1,22 @@
+<div id="tabs-container"> <!-- Don't add container -->
+    <div class="container"> <!-- Don't add row -->
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <section>
+                <div class="c-nav">
+                  <div class="c-nav__container">
+                    <div class="c-nav__links">
+                        <div class="c-nav__item" 
+                        #optionRef
+                        *ngFor="let option of navigationOptions; let i=index; let firstItem = first; let lastItem = last" 
+                        [ngClass]="{ 'c-nav--active': firstItem }"> 
+                            <a [attr.href]="'#'+ option.id"
+                            id="box{{i}}"
+                            (click)="initNavigationTabs($event, i)" >{{option.tab}}</a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,260 @@
+@import url("https://www.thermofisher.com/designsystem-cdn/css/fonts.css");
+@import url("https://thermoux.s3.amazonaws.com/komodo-icons.css");
+
+$card-border-radius: 4px;
+$card-img-width: 100%;
+$card-border: 1px solid rgb(229,229,229);
+$card-margin: 0.2rem;
+$card-title-font-weight: 700;
+$card-content-padding: 2px 16px;
+$card-content-font-color: #222222;
+$card-link-color: #1e8bff;
+$card-link-hover-color: #0066cc;
+$card-link-hover-shadow: 0px 0px 1px #0066cc;
+$teaser-width: 100%;
+$teaser-img-width: 30%;
+$teaser-img-height: 100%;
+$teaser-content-width: 60%;
+$card-cta-icon-color: #a2a2a2;
+$card-cta-icon-size: 14px;
+
+.success-title {
+  color: rgb(84, 88, 90);
+  font-family: HelveticaNeue-Medium;
+  font-size: 16px;
+  font-weight: 500;
+  //letter-spacing: 0px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.hr-title {
+  width: 44px !important;
+  background: #e71316 !important;
+}
+
+.headline {
+  color: rgb(34, 34, 34);
+  font-family: HelveticaNeue-Light;
+  font-size: 72px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.stories-description {
+  color: rgb(84, 84, 92);
+  font-family: HelveticaNeue;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 27px;
+  text-align: center;
+}
+
+/* c-cards */
+.c-card {
+  //border-radius:$card-border-radius;
+  //border: $card-border;
+  height: fit-content;
+  margin: $card-margin;
+  //min-height: 300px;
+  img {
+    width: $card-img-width;
+  }
+
+  a {
+    text-decoration: none;
+    color: $card-link-color;
+  }
+  /* .card-video1, .card-video2, .card-video3 > iframe {
+    //iframe.video-dimensions {
+      height: 250px !important;
+      width: 100% !important;
+    //}
+  } */
+  // Provisional image instead of videos template case
+  .container-image {
+    position: relative;
+    text-align: center;
+    color: white;
+    img {
+      max-height: 190px;
+    }
+    .centered {
+      position: 
+      absolute;
+      top: 50%;
+      left: 50%;
+      
+      transform: translate(-50%, -50%);
+    } 
+  }
+}
+
+.c-card__title {
+  font-weight: $card-title-font-weight;
+}
+
+.c-card__content {
+  padding-top: 10px;
+  //padding: $card-content-padding;
+  color: $card-content-font-color;
+
+  a {
+    margin-top: 50px;
+
+    p {
+      padding-top: 14px;
+      padding-bottom: 10px;
+
+      &:hover, &:hover::after {
+        color: $card-link-color;
+        text-shadow: $card-link-hover-shadow;
+      }
+    }
+  }
+}
+
+/* Teaser style */
+.c-card--teaser {
+  overflow: hidden;
+  position: relative;
+  width: $teaser-width;
+
+  .c-card__image {
+    display: inline-block;
+    vertical-align: top;
+    height: $teaser-img-height;
+    width: $teaser-img-width;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .c-card__content {
+    float: right;
+    width: $teaser-content-width;
+    margin-right: 15px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .c-card__description {
+    margin-top: 20px;
+    margin-bottom: 45px;
+  }
+
+  .c-card__cta {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .c-card__cta-items {
+    position: relative;
+  }
+
+  .c-card__cta-item {
+    display: inline-block;
+    position: relative;
+
+    * {
+      display: inherit;
+    }
+
+    a {
+      margin: 0;
+
+      i {
+        position: relative;
+        top: 4px;
+      }
+
+      p {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .c-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.c-card__cta {
+  p::after {
+    float: right;
+    font-family: "icomoon";
+    content: "\eae0";
+    color: $card-cta-icon-color;
+    position: relative;
+    font-size: $card-cta-icon-size;
+    z-index: -1;
+  }
+}
+
+@media (max-width: 620px) {
+  .c-card--teaser {
+    .c-card__image {
+      background: black !important; // test !!!
+      width: 40%;
+    }
+
+    .c-card__content {
+      width: 55%;
+      margin-right: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .c-card__description {
+      margin-top: 0px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+/* Large desktop */
+@media (min-width: 980px) {
+  .cards-container .c-card {
+    width: 24.1%;
+  }
+}
+
+
+/* Mobile  */
+@media only screen and (max-width: 700px) and (min-width: 300px) {
+  .container {
+    //background: greenyellow;
+  }
+  .headline {
+    font-size: 32px;
+  }
+  .stories-description {
+    font-size: 14px;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .cards-container .c-card {
+    width: 32.5%;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .cards-container .c-card {
+    width: 48.5%;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .cards-container .c-card {
+    width: 99%;
+  }
+}

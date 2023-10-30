@@ -1,0 +1,49 @@
+  <!-- Hero banner -->
+  <app-hero-banner [productDetail]="productContent"
+  [ngClass]="hideElement ? 'fades' : ''"
+  [heroFades]="hideElement ? true : false"></app-hero-banner>
+  <!-- [style.display]="hideElement ? 'none' : 'inherit'" -->
+
+  <ul style="opacity: 0;"> <!-- style="opacity: 0;"-->
+    <li style="list-style: none; font-size: 1px;"> 
+      <a [routerLink] = "['/']" fragment="overview">1....</a>
+    </li>
+    <li style="list-style: none; font-size: 1px;">
+      <a [routerLink] = "['/']" fragment="summary">2....</a>
+    </li>
+    <li style="list-style: none; font-size: 1px;">
+      <a [routerLink] = "['/']" fragment="success-stories">3....</a>
+    </li>
+  </ul>
+
+  <!-- Tabs Komodo component-->
+  <app-tabs [navigationOptions]="tabsNavigation" 
+  [productDetail]="productContent"
+  (hideHero)="hidesHero($event)"></app-tabs> 
+  <!-- (scroll)="onScroll($event)" -->
+
+  <!-- OvervIew component-->
+  <div id="overview"></div>
+  <app-overview
+  [videoUrl]="productSelected"
+  [productDetail]="productContent"
+  [mgTop]="hideElement ? true : false"></app-overview>
+  
+
+  <!-- Informative section -->
+  <div id="summary"></div>
+  <app-summary
+  [productDetail]="productContent"></app-summary>
+  
+
+  <!-- Success Stories section -->
+  <div id="success-stories"></div>
+  <app-stories [productDetail]="productContent"></app-stories>
+  <!-- [videoUrl]="productSelected" -->
+  
+
+  <!-- Top Button Component -->
+  <app-top-button></app-top-button>
+  
+  <!-- Footer 
+  <app-footer></app-footer>-->

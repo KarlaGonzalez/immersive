@@ -1,0 +1,60 @@
+<div> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="{{logoTF}}" alt="ThermoFisher logo" class="logo">
+    </a>
+    <div class="copy-box">
+      <!-- <hr class="divission-sm"> -->
+      <p class="left-border">
+        <span></span>
+        {{siteDescription}}
+      </p>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav "><!-- mr-auto -->
+        <li class="nav-item dropdown">
+          <a (click)="dropdownClicked($event, 'catalog')" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Catalog
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a href="#" 
+              *ngFor="let option of catalogOptions; let i=index"
+              class="dropdown-item"
+              (click)="optionClicked($event)">{{option}}</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a (click)="dropdownClicked($event, 'decision-tree')" class="nav-link" href="#">Help me decide</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a (click)="dropdownClicked($event, 'about-us')" class="nav-link" href="#">About us</a>
+        </li> -->
+       <!--  <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Immersive Technologies
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a href="#" class="dropdown-item" (click)="dropdownClicked($event, 'about-us')">About us </a>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+  </nav>
+
+</div>
+
+
+<!-- Nav Sub-menu Options 
+<div class="submenu-container" *ngIf="showSubMenu" style="min-height: 80px; background: rgb(247, 247, 247);">
+<ul class="dropdown-options" [ngClass]="{'small-list': navOptions.length <= 4, 'normal-list': navOptions.length >= 4}">
+    <li *ngFor="let option of navOptions">
+      <a href="#"
+        (click)="optionClicked($event)">{{option}}
+      </a>
+    </li>
+</ul>
+</div>-->

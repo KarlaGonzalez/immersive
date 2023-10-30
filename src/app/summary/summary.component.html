@@ -1,0 +1,44 @@
+<div class="jumbotron" *ngIf="productDetail.featureVal1 || productDetail.helpTopics[0]">
+  <!-- {{productDetail.featureVal1}} || {{productDetail.helpTopics}} -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6"> <!-- style="padding-left: 20rem;"-->
+        <p class="summary-title">{{summaryTitle}}</p>
+        <table class="c-table c-table--large">
+            <tbody>
+                <tr *ngIf="productDetail"> <!-- *ngFor="let rowContent of tabRows;" -->
+                    <td class="lead feature">{{productDetail.feature1}}</td> 
+                    <td *ngFor="let dot of defaultDotsList; let i = index" class="dots-content">
+                        <span class="dot" [class.red]="productDetail.featureVal1 > i"></span>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="lead feature">{{productDetail.feature2}}</td> 
+                  <td *ngFor="let dot of defaultDotsList; let i = index" class="dots-content">
+                    <span class="dot" [class.red]="productDetail.featureVal2 > i"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="lead feature">{{productDetail.feature3}}</td> 
+                  <td *ngFor="let dot of defaultDotsList; let i = index" class="dots-content">
+                    <span class="dot" [class.red]="productDetail.featureVal3 > i"></span>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <p class="summary-title">{{featureHelpTitle}}</p>
+          <ul class="summary-list">
+            <!-- <li *ngFor="let item of summaryList">{{item}}</li> -->
+            <!-- <li *ngFor="let item of totalTopics; let i=index">{{productDetail.helpTopics[i]}}</li> -->
+            <li class="item" *ngIf="productDetail.helpTopics[0]">{{productDetail.helpTopics[0]}}</li>
+            <li class="item" *ngIf="productDetail.helpTopics[1]">{{productDetail.helpTopics[1]}}</li>
+            <li class="item" *ngIf="productDetail.helpTopics[2]">{{productDetail.helpTopics[2]}}</li>
+            <li class="item" *ngIf="productDetail.helpTopics[3]">{{productDetail.helpTopics[3]}}</li>
+            <li class="item" *ngIf="productDetail.helpTopics[4]">{{productDetail.helpTopics[4]}}</li>
+            <li class="item" *ngIf="productDetail.helpTopics[5]">{{productDetail.helpTopics[5]}}</li>
+            <li class="item" *ngIf="productDetail.helpTopics[6]">{{productDetail.helpTopics[6]}}</li>
+          </ul>
+      </div>
+    </div>
+</div>

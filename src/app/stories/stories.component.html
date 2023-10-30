@@ -1,0 +1,146 @@
+<div class="container"><!-- style="margin-top: 10rem;" -->
+    <div class="row">
+        <div class="col-md-12"> <!--style="margin: 2rem 9rem; text-align: center;"-->
+            <p class="success-title">{{sectionTitle}}</p>
+            <hr class="hr-title my-4"> 
+            <div *ngIf="productDetail">
+              <p class="headline mt-5">{{productDetail.headline}}</p>
+              <p class="stories-description mt-4 mb-5">{{productDetail.storiesDescription}}</p>
+            </div>
+        </div>
+        <!-- TEST IFRAME 
+        <div [innerHTML]="productDetail.video1 | safe: 'html' "></div>
+        <div [innerHTML]="productDetail.video2 | safe: 'html' "></div>
+        <div [innerHTML]="productDetail.video3 | safe: 'html' "></div>-->
+
+        <!-- Images template case  -->
+        <!-- <ng-container *ngIf="productDetail.video1 && productDetail.video2 && productDetail.video3; else noStories">
+          <div class="col-md-4" *ngIf="productDetail.video1">
+            <div class="c-card">
+              <a [href]="productDetail.video1" target="_blank">
+                <div class="container-image">
+                  <img class="img img-responsive" src="../../assets/img/hero.jpg" alt="Success story link"
+                  style="width:100%;">
+                  <div class="centered">{{storyText}}</div>
+                </div> 
+              </a>
+              <div class="c-card__content">
+                <p class="c-card__title">{{productDetail.cardTitle1}}</p>
+                <p class="c-card__description">
+                  {{productDetail.cardDescription1}}
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-4" *ngIf="productDetail.video2">
+            <div class="c-card">
+              <a [href]="productDetail.video2" target="_blank">
+                <div class="container-image">
+                  <img class="img img-responsive" src="../../assets/img/woman-at-work.png" alt="Success story link"
+                  style="width:100%;">
+                  <div class="centered">{{storyText}}</div>
+                </div> 
+              </a>
+              <div class="c-card__content">
+                <p class="c-card__title">{{productDetail.cardTitle2}}</p>
+                <p class="c-card__description">
+                  {{productDetail.cardDescription2}}
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-4" *ngIf="productDetail.video3">
+            <div class="c-card">
+              <a [href]="productDetail.video3" target="_blank">
+                <div class="container-image">
+                  <img class="img img-responsive" src="../../assets/img/guide.jpg" alt="Success story link"
+                  style="width:100%;">
+                  <div class="centered">{{storyText}}</div>
+                </div> 
+              </a>
+              <div class="c-card__content">
+                <p class="c-card__title">{{productDetail.cardTitle3}}</p>
+                <p class="c-card__description">
+                  {{productDetail.cardDescription3}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </ng-container> -->
+
+        <!-- Videos template case  -->
+        <ng-container *ngIf="productDetail.video1 && productDetail.video2 && productDetail.video3; else noStories">
+          <div class="col-md-4" *ngIf="productDetail.video1">
+            <div class="c-card">
+              <div [innerHTML]="setStyles(productDetail.video1) | safe: 'html' " class="card-video1" > <!-- [ngClass]="test(this)" -->
+                <!-- <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/993d58a9-0783-4028-98f1-bf544f714573?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe> -->
+              </div>
+              <div class="c-card__content">
+                <p class="c-card__title">{{productDetail.cardTitle1}}</p>
+                <p class="c-card__description">
+                  {{productDetail.cardDescription1}}
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-4" *ngIf="productDetail.video2">
+            <div class="c-card">
+              <div [innerHTML]="setStyles(productDetail.video2) | safe: 'html' " class="card-video2">
+                <!-- iframe -->
+              </div>
+              <div class="c-card__content">
+                <p class="c-card__title">{{productDetail.cardTitle2}}</p>
+                <p class="c-card__description">
+                  {{productDetail.cardDescription2}}
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-4" *ngIf="productDetail.video3">
+            <div class="c-card">
+              <div [innerHTML]="setStyles(productDetail.video3) | safe: 'html' " class="card-video3">
+                <!-- iframe -->
+              </div>
+              <div class="c-card__content">
+                <p class="c-card__title">{{productDetail.cardTitle3}}</p>
+                <p class="c-card__description">
+                  {{productDetail.cardDescription3}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-template #noStories>
+          <div class="col-md-12"> 
+            <div class="c-card" style="height: 12rem;">
+              <div class="c-card__content">
+                <p class="c-card__description text-center">{{soonCopy}}</p>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+    </div> <!-- row -->
+</div>
+
+ <!-- ORIGINAL COMPONENT
+    <div class="col-md-4" *ngFor="let card of cardsContent; let i = index">
+      <div class="c-card">
+          <div class="c-card__image"> 
+              <video controls>
+                  <source src="{{card.videoURL}}" type="video/mp4">
+              </video>
+          </div>
+        <div class="c-card__content">
+          <p class="c-card__title">{{card.cardTitle}}</p>
+          <p class="c-card__description">
+            {{card.cardDescription}}
+          </p>
+        </div>
+      </div>
+  </div> -->

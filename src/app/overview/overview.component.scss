@@ -1,0 +1,98 @@
+#contentSection {
+    /* color: rgb(34, 34, 34);
+    font-size: 32px;
+    font-family: HelveticaNeue-Light;
+    font-weight: 300;
+    letter-spacing: 0px;
+    line-height: 32px; */
+    .overview-container {
+      text-align: left;
+      //padding: 0 6rem;
+      &.desktop {
+          padding: 0 6rem;
+      }
+      .product-title {
+        color: rgb(34, 34, 34);
+        font-family: HelveticaNeue-Light;
+        font-size: 32px;
+        font-weight: 300;
+        //letter-spacing: 0px;
+        line-height: 32px;
+      }
+      .product-content {
+        color: rgb(84, 88, 90);
+        font-family: HelveticaNeue;
+        font-size: 16px;
+        //etter-spacing: 0px;
+        line-height: 26px;
+      }
+    }
+    .product-content {
+      color: rgb(84, 88, 90);
+      font-size: 16px;
+      font-family: HelveticaNeue;
+      letter-spacing: 0px;
+      line-height: 26px;
+    }
+    .product-caption {
+      margin: 1rem;
+      color: rgb(121, 122, 125);
+      font-size: 14px;
+      font-family: HelveticaNeue;
+      letter-spacing: 0px;
+      line-height: 20px;
+    }
+
+    // Video 
+    /*  .video-container {
+        display: flex;
+        //justify-content: center;
+        margin: 3rem 0 3rem 0;
+    }
+    
+    video {
+    border: 1px solid black;
+    }
+    
+    .player {
+        // position: absolute;
+    }
+    
+    // Navigation Komodo component
+    .c-nav__container {
+        min-width: 700px;
+        //position: relative;
+        height: 48px;
+        background-color: #ffffff;
+    } */
+  }
+
+/* Mobile  */
+@media only screen and (max-width: 700px) and (min-width: 300px) {
+  //test
+  #contentSection {
+      //background: greenyellow;
+      .overview-container {
+        .product-title {
+            font-size: 22px;
+        }
+        .product-content {
+            font-size: 14px;
+        }
+      }
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 701px) {
+    //test
+    #contentSection {
+        //background: cyan;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1001px) {
+    //test
+    #contentSection {
+        //background: pink;
+    }
+  }
